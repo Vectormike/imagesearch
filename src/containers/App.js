@@ -18,24 +18,29 @@ function App() {
   //   setPhotos(items);
   // }
 
-  useEffect(async() => {
-    let data;
-    try {
-      data = await fetch(`https://api.unsplash.com/search/photos?${apiKey}`, {
-      query: photo,
-      per_page: 30
-    });
-    const items = await data.json();
-    } catch (error) {
-      console.log(`Error is ${error}`)
+  useEffect(() => {
+      let fetchData = async (query) => {
+      try {
+      let data = await fetch(`https://api.unsplash.com/search/photos?client_id=${apiKey}&per_page=2&query=${query}`);
+      const items = await data.json();
+      setPhotos(items.results);
+      } catch (error) {
+        console.log(`Error is ${error}`)
+      }
     }
-    setPhotos(items);
-  })
+    fetchData();
+    
+    console.log(photos);
+  }, [searchField]);
   
+  function onSearchChange(e) {
+    setSearchField(e.target.value)
+    this.fetchData(searchField)
+  }
 
   return (
     <div>
-      <SearchBar/>
+      <SearchBar onSearch={onSearchChange} search={searchField}/>
     </div>
   );
 }

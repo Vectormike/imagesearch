@@ -10,11 +10,12 @@ function App() {
   
   // Function to setTerm when user inputs
 	let onInput = (e) => {
-		setTerm(e.target.value)
+		setTerm({term: e.target.value})
 	}
 
 	let onButtonSubmit = () => {
     fetchData(term);
+    console.log(photos)
 	}
   
   useEffect(() => {
@@ -26,7 +27,6 @@ function App() {
     try {
     let data = await fetch(`https://api.unsplash.com/search/photos?client_id=${apiKey}&per_page=2&query=${term}`);
     const items = await data.json();
-    console.log(items)
     setPhotos(items.results);
     } catch (error) {
       console.log(`Error is ${error}`)

@@ -1,23 +1,27 @@
 import React from "react";
 
-function SearchField() {
+function SearchField({onInput, onButtonSubmit}) {
 
-	const [term, setTerm] = useState('');
+	
 
-	// Function to setTerm when user inputs
-	function onInput(e){
-		setTerm(e.target.value)
-		console.log(term)
+	
+	function onFormSubmit(e) {
+		e.preventDefault();
 	}
-  
+
 	return(
 		<div>
-			<input 
-				type='Search'
-				placeholder='Search for that beautiful photo'
-				onChange={onInput}
-			/>
-			<button type="submit">Click</button>
+			<form onSubmit={onFormSubmit}>
+				<input 
+					type='Search'
+					placeholder='Search for that beautiful photo'
+					onChange={onInput}
+				/>
+				<button 
+					onClick={onButtonSubmit} 
+					type="submit">Click
+				</button>
+			</form>
 		</div>
 	);
 }

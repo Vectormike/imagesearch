@@ -6,26 +6,27 @@ const apiKey = '581eb4a49e4ae7142198627eae4a64b445a6bd9af7bb96de5a3cf51e2b62d919
 function App() {
 
   const [photos, setPhotos] = useState([]);
+  const [term, setTerm] = useState('');
+  
+  // Function to setTerm when user inputs
+	let onInput = (e) => {
+		setTerm(e.target.value)
+	}
 
-  // getPhotos = async (photo) => {
-  //   let data;
-  //   data = await fetch(`https://api.unsplash.com/search/photos?${apiKey}`, {
-  //     query: photo,
-  //     per_page: 30
-  //   });
-  //   const items = await data.json();
-  //   setPhotos(items);
-  // }
-
+	let onButtonSubmit = () => {
+    fetchData(term);
+	}
+  
   useEffect(() => {
-    fetchData();
-  });
+    fetchData(term);
+  }, [term]);
   
 
-  async function fetchData(){
+  async function fetchData(term){
     try {
     let data = await fetch(`https://api.unsplash.com/search/photos?client_id=${apiKey}&per_page=2&query=${term}`);
     const items = await data.json();
+    console.log(items)
     setPhotos(items.results);
     } catch (error) {
       console.log(`Error is ${error}`)
@@ -35,7 +36,7 @@ function App() {
 
   return (
     <div>
-      <SearchBar/>
+      <SearchBar onInput={onInput} onButtonSubmit={onButtonSubmit}/>
     </div>
   );
 }

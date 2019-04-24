@@ -1,6 +1,8 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
-import SearchBar from '../components/SearchField/SearchField'
+import Header from '../components/Header/Header.js';
+import SearchBar from '../components/SearchField/SearchField';
+import ImageCardList from '../components\ImageCardList\ImageCardList.js';
 
 const apiKey = '581eb4a49e4ae7142198627eae4a64b445a6bd9af7bb96de5a3cf51e2b62d919';
 function App() {
@@ -36,7 +38,12 @@ function App() {
 
   return (
     <div>
-      <SearchBar onInput={onInput} onButtonSubmit={onButtonSubmit}/>
+      <Header/>
+      <SearchBar 
+        data={photos}   
+        onInput={onInput} 
+        onButtonSubmit={onButtonSubmit}
+      />
     </div>
   );
 }

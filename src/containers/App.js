@@ -7,7 +7,7 @@ import ImageCardList from '../components/ImageCardList/ImageCardList';
 const apiKey = '581eb4a49e4ae7142198627eae4a64b445a6bd9af7bb96de5a3cf51e2b62d919';
 function App() {
 
-  const [photos, setPhotos] = useState({});
+  const [photos, setPhotos] = useState([]);
   const [term, setTerm] = useState('');
   
   // Function to setTerm when user inputs
@@ -43,7 +43,7 @@ function App() {
         onButtonSubmit={onButtonSubmit}
       />
       <ImageCardList 
-        data={photos} 
+        response={photos} 
       />
     </div>
   );

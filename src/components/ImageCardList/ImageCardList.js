@@ -2,19 +2,19 @@ import React from 'react';
 import ImageCard from '../ImageCard/ImageCard';
 
 
-function ImageCardList({data}){
-	// const {alt_description, urls, likes, user} = data;
+function ImageCardList({response}){
+	console.log(response)
+
 	return(
 		<div>
 			{
-				data.map((res, i) => {
+				response.map((res, i) => {
 					return(
 						<ImageCard
 							key={i}
-							description={res.alt_description}
-							likes={res.likes}
-							user={res.user}
-							url={res.url}
+							likes={res[i].likes}
+							user={res[i].user}
+							url={res[i].url}
 						/>
 					);
 				})

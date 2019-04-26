@@ -26,7 +26,7 @@ function App() {
 
   async function fetchData(term){
     try {
-    let data = await fetch(`https://api.unsplash.com/search/photos?client_id=${apiKey}&per_page=2&query=${term}`);
+    let data = await fetch(`https://api.unsplash.com/search/photos?client_id=${apiKey}&per_page=30&query=${term}`);
     const items = await data.json();
     setPhotos(items.results);
     } catch (error) {

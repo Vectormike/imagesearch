@@ -13,7 +13,9 @@ function ImageCardList({response}){
 							key={i}
 							likes={response[i].likes}
 							description={response[i].alt_description}
-							url={response[i].url[0].small}
+							url={response[i].urls['small']}
+							user={response[i].user['name']}
+
 						/>
 					);
 				})

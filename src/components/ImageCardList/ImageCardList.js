@@ -3,7 +3,6 @@ import ImageCard from '../ImageCard/ImageCard';
 
 
 function ImageCardList({response}){
-	console.log(response)
 
 	return(
 		<div>
@@ -12,9 +11,9 @@ function ImageCardList({response}){
 					return(
 						<ImageCard
 							key={i}
-							likes={res[i].likes}
-							user={res[i].user}
-							url={res[i].url}
+							likes={response[i].likes}
+							description={response[i].alt_description}
+							url={response[i].url[0].small}
 						/>
 					);
 				})
@@ -25,3 +24,4 @@ function ImageCardList({response}){
 }
 
 export default ImageCardList;
+// user={response[i].user} url={response[i].url}

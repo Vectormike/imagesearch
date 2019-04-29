@@ -1,6 +1,7 @@
 
 
 .balloon {
+    position: relative;
     display: inline-block;
     width: 215px;
     padding: 10px 0 10px 15px;
@@ -21,11 +22,11 @@
   }
   .balloon + label {
     display: inline-block;
-    position: absolute;
+    position: relative;
     top: 8px;
     left: 0;
     bottom: 8px;
-    padding: 5px 15px;
+    padding: 5px 10px;
     color: #032429;
     font-size: 11px;
     font-weight: 700;
@@ -36,7 +37,6 @@
     background: rgba(122, 184, 147, 0);
   }
   .balloon + label:after {
-    position: absolute;
     content: "";
     width: 0;
     height: 0;
@@ -70,4 +70,6 @@
   .balloon:active + label:after {
     border-top: 4px solid #7ab893;
   }
-  
+
+
+/* Credit from https://codepen.io/MichaelArestad */

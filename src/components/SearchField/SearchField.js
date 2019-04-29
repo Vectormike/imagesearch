@@ -5,13 +5,16 @@ function SearchField({onInput}) {
 
 	return(
 		<div>
-			<input className="balloon" 
-				onChange={onInput}	
-				id="galaxy" 
-				type="text" 
-				placeholder="Beautiful photo?" 
-				/>
-				<label for="galaxy">Image</label>
+			<span>
+				<input className="balloon" 
+					onChange={onInput}	
+					id="galaxy" 
+					type="text" 
+					placeholder="Beautiful photo?" 
+					/>
+					<label for="galaxy">Image</label>
+				</span>
+			
 			</div>
 	);
 }

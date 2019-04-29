@@ -13,7 +13,7 @@ function ImageCardList({response}){
 							key={i}
 							likes={response[i].likes}
 							description={response[i].alt_description}
-							url={response[i].urls['small']}
+							url={response[i].urls['regular']}
 							user={response[i].user['name']}
 
 						/>

@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react';
 import 'tachyons';
-import 'bootstrap'
 import './App.css';
 import Header from '../components/Header/Header.js';
 import SearchBar from '../components/SearchField/SearchField';
@@ -38,7 +37,7 @@ function App() {
 
 
   return (
-    <div>
+    <div className="container">
       <Header/>
       <SearchBar   
         onInput={onInput} 

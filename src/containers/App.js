@@ -38,6 +38,7 @@ function App() {
 
   return (
     <div className="tc">
+
       <Header/>
       <SearchBar   
         onInput={onInput} 

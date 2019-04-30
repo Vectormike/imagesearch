@@ -4,18 +4,14 @@ import './SearchField.css';
 function SearchField({onInput}) {
 
 	return(
-		<div>
-			<span>
-				<input className="balloon" 
-					onChange={onInput}	
-					id="galaxy" 
-					type="text" 
-					placeholder="Beautiful photo?" 
-					/>
-					<label for="galaxy">Image</label>
-				</span>
-			
-			</div>
+		<div className="search-block">
+			<input  
+				onChange={onInput}
+				type="search" 
+				placeholder="Beautiful photo?" 
+				/>
+			<div className="icon"></div>
+		</div>
 	);
 }
 

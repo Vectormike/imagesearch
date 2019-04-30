@@ -6,7 +6,6 @@ function SearchField({onInput, onPress}) {
 	return(
 		<div className="search-block">
 			<input  
-				onChange={onInput}
 				onKeyPress={onPress}
 				type="search" 
 				placeholder="Beautiful photo?" 

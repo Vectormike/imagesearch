@@ -12,13 +12,13 @@ function App() {
   const [term, setTerm] = useState('');
   
   // Function to setTerm when user inputs
-	let onInput = (e) => {
-		setTerm(e.target.value)
-	}
 
-	let onButtonSubmit = () => {
-    fetchData(term);
-	}
+
+  let onKeyPress = (e) => {
+    if(e.keyCode === 13 || e.charCode === 13)
+      setTerm(e.target.value)
+    }
+
   
   useEffect(() => {
     fetchData(term);
@@ -41,8 +41,7 @@ function App() {
 
       <Header/>
       <SearchBar   
-        onInput={onInput} 
-        onButtonSubmit={onButtonSubmit}
+        onPress={onKeyPress}
       />
       <ImageCardList 
         response={photos} 

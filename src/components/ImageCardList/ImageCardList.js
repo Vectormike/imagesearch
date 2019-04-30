@@ -1,6 +1,6 @@
 import React from 'react';
 import ImageCard from '../ImageCard/ImageCard';
-
+import './ImageCardList.css';
 
 function ImageCardList({response}){
 
@@ -9,17 +9,14 @@ function ImageCardList({response}){
 			{
 				response.map((res, i) => {
 					return(
-
 						<div className="col-lg-3">
 							<ImageCard
-							key={i}
-							likes={response[i].likes}
-							description={response[i].alt_description}
-							url={response[i].urls['regular']}
-							user={response[i].user['name']}
-
-						/>
-							
+								key={i}
+								likes={response[i].likes}
+								description={response[i].alt_description}
+								url={response[i].urls['regular']}
+								user={response[i].user['name']}
+							/>	
 						</div>
 					);
 				})
@@ -30,4 +27,3 @@ function ImageCardList({response}){
 }
 
 export default ImageCardList;
-// user={response[i].user} url={response[i].url}

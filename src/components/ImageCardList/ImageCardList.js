@@ -5,11 +5,13 @@ import ImageCard from '../ImageCard/ImageCard';
 function ImageCardList({response}){
 
 	return(
-		<div>
+		<div className="row">
 			{
 				response.map((res, i) => {
 					return(
-						<ImageCard
+
+						<div className="col-lg-3">
+							<ImageCard
 							key={i}
 							likes={response[i].likes}
 							description={response[i].alt_description}
@@ -17,6 +19,8 @@ function ImageCardList({response}){
 							user={response[i].user['name']}
 
 						/>
+							
+						</div>
 					);
 				})
 			}

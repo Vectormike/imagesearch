@@ -1,7 +1,7 @@
 import React from "react";
 import './SearchField.css';
 
-function SearchField({onInput, onPress}) {
+function SearchField({onPress}) {
 
 	return(
 		<div className="search-block">

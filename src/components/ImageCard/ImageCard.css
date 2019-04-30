@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css?family=Gugi');
+
+dl {
+    font-family: 'Gugi', cursive;
+}
+
+img {
+    border-radius: 6px;
+    max-height: 500px;
+    height: 70%;
+    width: auto;
+}

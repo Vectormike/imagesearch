@@ -4,27 +4,9 @@ dl {
     font-family: 'Gugi', cursive;
 }
 
-.flex-container {
-    padding: 0;
-    margin: 0;
-    list-style: none;    
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-flow: row wrap;
-    justify-content: space-around;
-}
-
-.flex-item {
-    padding: 3px;
-    width: 50%;
-    height: 50%;
-    margin-top: 20px;
-}
 img {
     border-radius: 6px;
-    display: block;
-    height: auto;
+    max-height: 500px;
+    height: 70%;
+    width: auto;
 }

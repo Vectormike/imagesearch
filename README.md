@@ -1,10 +1,10 @@
 # Image Search
 
-A Web Application buitl with React, fetching an API with endpoints of searched images from a user.
+A Web Application built with React, Hooks & fetching an API with endpoints of searched images from a user.
 
 # What I Learned
 
-* Developed a user interface with React, fetched API,.
+* Developed a user interface with React, React Hooks & fetched API,.
 * Implemented functinality to the UI: onSearch, & onKeyPress.
 
 
